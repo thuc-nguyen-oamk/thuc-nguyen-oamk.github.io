@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="text/css" href="img/favicon.png">
+</head>
+<body>
+    <div class="web">
+    <!-- header -->
+    <div class="header">
+        <!-- header_navbar -->
+        <div class="header_navbar">
+            <!-- logo -->
+            <a href="product-listing.html" class="header_logo">
+                <img src="img/hth.png" alt="" class="header_logo_img">
+            </a>
+            <!-- search -->
+            <div class="header_search">
+                <input type="text" class="header_search_input" placeholder="Search for ">
+                <div class="header_search_icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- list menu -->
+            <div class="header_navbar_list">
+                <ul class="header_navbar_list">
+                    <li class="header_navbar_item">
+                        <a href="">APPLE</a>
+                        <ul class="header_navbar_hover">
+                            <li><a href="">Macbook Air</a></li>
+                            <li><a href="">Macbook Pro</a></li>
+                        </ul>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="">ASUS</a>
+                        <ul class="header_navbar_hover">
+                            <li><a href="">Asus Strix</a></li>
+                            <li><a href="">Asus Expert</a></li>
+                        </ul>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="">DELL</a>
+                        <ul class="header_navbar_hover">
+                            <li><a href="">Dell Vostro</a></li>
+                            <li><a href="">Dell XPS</a></li>
+                        </ul>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="">ACER</a>
+                        <ul class="header_navbar_hover">
+                            <li><a href="">Acer Nitro</a></li>
+                            <li><a href="">Acer Swift</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- icon -->
+            <div class="header_navbar_icon">
+                <a href="" class="header_navbar_icon_cart">
+                    <i class="fas fa-cart-plus"></i>
+                    <p>Cart</p>
+                </a>
+                <div class="header_navbar_icon_bell">
+                    <a href="" class="header_navbar_icon_bell">
+                        <i class="fas fa-bell"></i>
+                        <p>Notifications</p>
+                        <!-- notify -->
+                        <div class="notify">
+                            <header class="notify_header">
+                                <h3>New feed</h3>
+                            </header>
+                            <ul class="notify_list">
+                                <li class="notify_item">
+                                    <a href="" class="notify_link">
+                                        <img src="img/bitcoin.jpg" alt="" class="notify_img">
+                                        <div class="notify_info">
+                                            <span class="notify_describe">Bitcoin</span>
+                                            <span class="notify_describe">Bitcoin jumps to three-year high ... </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notify_item">
+                                    <a href="" class="notify_link">
+                                        <img src="img/m1.jpg" alt="" class="notify_img">
+                                        <div class="notify_info">
+                                            <span class="notify_describe">Chip set M1</span>
+                                            <span class="notify_describe">Mac with M1 is transformed ... </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="header_navbar_icon_login">
+                    <i class="fas fa-user"></i>
+                    <p>Login</p>
+                    <!-- login -->
+                    <div class="login">
+                        <input type="text" class="login_input" placeholder="Username">
+                        <input type="password" class="login_input" placeholder="Password">
+                        <a href="" class="login_forget">Forgot Password</a>
+                        <div class="login_control">
+                            <button class="btn signup">Sign up</button>
+                            <button class="btn main">Log in</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- container -->
+    <div class="t-container">
+        <h1>Shopping Cart</h1>
+        <div class="t-wrapper">
+            <div class="t-items">
+                <div class="t-item">
+                    <div class="t-col1">
+                        <img src="img/sp01.png">
+                    </div>
+                    <div class="t-col2">
+                        <div class="t-name"><a href="product-details.html"><b>Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD</b></a></div>
+                        <div class="t-gray"><a href="">Delete</a></div>
+                    </div>
+                    <div class="t-col3">
+                        <div class="t-gray">Price</div>
+                        <div class="t-red">&euro;949</div>
+                        <div class="t-gray t-linethrough">&euro;1898</div>
+                        <div class="t-gray t-smalltext">50% off</div>
+                    </div>
+                    <div class="t-col4">
+                        <div class="t-gray">Quantity</div>
+                        <div class="t-minusplus">
+                            <i class="fas fa-minus"></i>
+                            <span>1</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="t-col5">
+                        <div class="t-gray">Subtotal</div>
+                        <div>&euro;949</div>
+                    </div>
+                </div>
+                <div class="t-item">
+                    <div class="t-col1">
+                        <img src="img/sp02.png">
+                    </div>
+                    <div class="t-col2">
+                        <div class="t-name"><a href="product-details.html"><b>Acer Swift 5 SF514 53T 720R/Core i7 8565U/NX.H7HSV.002</b></a></div>
+                        <div class="t-gray"><a href="">Delete</a></div>
+                    </div>
+                    <div class="t-col3">
+                        <div class="t-gray">Price</div>
+                        <div class="t-red">&euro;919</div>
+                        <div class="t-gray t-linethrough"></div>
+                        <div class="t-gray t-smalltext"></div>
+                    </div>
+                    <div class="t-col4">
+                        <div class="t-gray">Quantity</div>
+                        <div class="t-minusplus">
+                            <i class="fas fa-minus"></i>
+                            <span>4</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="t-col5">
+                        <div class="t-gray">Subtotal</div>
+                        <div>&euro;3,676</div>
+                    </div>
+                </div>
+                <div class="t-item">
+                    <div class="t-col1">
+                        <img src="img/sp03.png">
+                    </div>
+                    <div class="t-col2">
+                        <div class="t-name"><a href="product-details.html"><b>MSI GF63 9SCSRi5 512GB SSD/Nvidia GTX1650Ti</b></a></div>
+                        <div class="t-gray"><a href="">Delete</a></div>
+                    </div>
+                    <div class="t-col3">
+                        <div class="t-gray">Price</div>
+                        <div class="t-red">&euro;939</div>
+                        <div class="t-gray t-linethrough"></div>
+                        <div class="t-gray t-smalltext"></div>
+                    </div>
+                    <div class="t-col4">
+                        <div class="t-gray">Quantity</div>
+                        <div class="t-minusplus">
+                            <i class="fas fa-minus"></i>
+                            <span>2</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="t-col5">
+                        <div class="t-gray">Subtotal</div>
+                        <div>&euro;1,878</div>
+                    </div>
+                </div>
+            </div>
+            <div class="t-checkout-col">
+            <div class="t-totals">
+                <div class="t-total">Total 7 items</div>
+                <div class="t-grandprice">&euro;6,503</div>
+            </div>
+            <div class="t-coupon-apply">
+                <input class="t-coupon" placeholder="Enter Coupon"></input>
+                <button class="t-apply"><a href="">Apply</a></button>
+            </div>
+            <button class="t-checkout"><a href="">Checkout</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <hr>
+        <div class="footer_collumn">
+            <div class="footer_collumna">
+                <div class="footer_collumna_top">
+                    <h3>CONTACT US</h3>
+                </div>
+                <ul class="footer_collumna_bottom">
+                    <li>
+                        <a href="" class="">
+                            <i class="fas fa-phone-volume"></i>
+                            <span id="phone">&nbsp;0909 123 456 <sub>(Free)</sub></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <i class="far fa-envelope"></i>
+                            <span>THT@students.oamk.fi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <i class="fas fa-home"></i>
+                            <span class="home address">Yliopistokatu 9, 90570 OULU 90570 Oulu, Finland</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_collumnb">
+                <div class="footer_collumnb_top">
+                    <h3>CUSTOMER CARE</h3>
+                </div>
+                <ul class="footer_collumnb_bottom">
+                    <li><a href="" class="">Warranty Policy</a></li>
+                    <li><a href="" class="">Shopping Guide</a></li>
+                    <li><a href="" class="">Transportation</a></li>
+                    <li><a href="" class="">Return & Refund</a></li>
+                    <li><a href="" class="">About us</a></li>
+                </ul>
+            </div>
+            <div class="footer_collumnc">
+                <div class="footer_collumnc_top">
+                    <h3>WHERE TO FIND US</h3>
+                </div>
+                <div class="footer_collumnc_bottom">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.2676912167033!2d25.469971516233894!3d65.06181808401735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46802d052d06ce85%3A0xd4acaa362bd64910!2sYliopistokatu%209%2C%2090570%20Oulu%2C%20Ph%E1%BA%A7n%20Lan!5e0!3m2!1svi!2s!4v1607357770203!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer_end">
+            <span>© 2020 HTH. All rights reserved.</span>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

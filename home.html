@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="css/home.css">
+		<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title>HTH home page</title>
+    </head>
+    <body>
+        <div class="web">
+            <!-- header -->
+            <div class="header">
+                <!-- header_navbar -->
+                <div class="header_navbar">
+                    <!-- logo -->
+                    <a href="" class="header_logo">
+                        <img src="img/hth.png" alt="" class="header_logo_img">
+                    </a>
+                    <!-- search -->
+                    <div class="header_search">
+                        <input type="text" class="header_search_input" placeholder="Seach for">
+                        <div class="header_search_icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <!-- list menu -->
+                    <div class="header_navbar_list">
+                        <ul class="header_navbar_list">
+                            <li class="header_navbar_item">
+                                <a href="">APPLE</a>
+                                <ul class="header_navbar_hover">
+                                    <li><a href="">Macbook Air</a></li>
+                                    <li><a href="">Macbook Pro</a></li>
+                                </ul>
+                            </li>
+                            <li class="header_navbar_item">
+                                <a href="">ASUS</a>
+                                <ul class="header_navbar_hover">
+                                    <li><a href="">Asus Strix</a></li>
+                                    <li><a href="">Asus Expert</a></li>
+                                </ul>
+                            </li>
+                            <li class="header_navbar_item">
+                                <a href="">DELL</a>
+                                <ul class="header_navbar_hover">
+                                    <li><a href="">Dell Vostro</a></li>
+                                    <li><a href="">Dell XPS</a></li>
+                                </ul>
+                            </li>
+                            <li class="header_navbar_item">
+                                <a href="">ACER</a>
+                                <ul class="header_navbar_hover">
+                                    <li><a href="">Acer Nitro</a></li>
+                                    <li><a href="">Acer Swift</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- icon -->
+                    <div class="header_navbar_icon">
+                        <a href="" class="header_navbar_icon_cart">
+                            <i class="fas fa-cart-plus"></i>
+                            <p>Cart</p>
+                        </a>
+                        <div class="header_navbar_icon_bell">
+                            <a href="" class="header_navbar_icon_bell">
+                                <i class="fas fa-bell"></i>
+                                <p>Notifications</p>
+                                <!-- notify -->
+                                <div class="notify">
+                                    <header class="notify_header">
+                                        <h3>New feed</h3>
+                                    </header>
+                                    <ul class="notify_list">
+                                        <li class="notify_item">
+                                            <a href="" class="notify_link">
+                                                <img src="img/bitcoin.jpg" alt="" class="notify_img">
+                                                <div class="notify_info">
+                                                    <span class="notify_describe">Bitcoin</span>
+                                                    <span class="notify_describe">Bitcoin jumps to three-year high ... </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="notify_item">
+                                            <a href="" class="notify_link">
+                                                <img src="img/m1.jpg" alt="" class="notify_img">
+                                                <div class="notify_info">
+                                                    <span class="notify_describe">Chip set M1</span>
+                                                    <span class="notify_describe">Mac with M1 is transformed ... </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="header_navbar_icon_login">
+                            <i class="fas fa-user"></i>
+                            <p>Login</p>
+                            <!-- login -->
+                            <div class="login">
+                                <input type="text" class="login_input" placeholder="Username">
+                                <input type="password" class="login_input" placeholder="Password">
+                                <a href="" class="login_forget">Forgot Password</a>
+                                <div class="login_control">
+                                    <button class="btn signup">Sign up</button>
+                                    <button class="btn main">Log in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- header_slidebar -->
+                <div class="header_slider">
+                    <img src="img/s1.png" alt="" class="slide" stt="0">
+                    <img src="img/s2.png" alt="" class="slide" stt="1">
+                    <img src="img/s3.png" alt="" class="slide" stt="2">
+                    <a href="" id="prev">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                    <a href="" id="next">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- container -->
+            <div class="container">
+                <div class="container_left">
+                    <div class="container_left_son">
+                        <h3>Brandname</h3>
+                        <ul>
+                            <li><input type="checkbox" name="Brandname" id="Apple" value=""><label for="Apple">Apple</label></li>
+                            <li><input type="checkbox" name="Brandname" id="Asus" value=""><label for="Asus">Asus</label></li>
+                            <li><input type="checkbox" name="Brandname" id="Dell" value=""><label for="Dell">Dell</label></li>
+                            <li><input type="checkbox" name="Brandname" id="Acer" value=""><label for="Acer">Acer</label></li>
+                            <li><input type="checkbox" name="Brandname" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>Price</h3>
+                        <ul>
+                            <li><input type="checkbox" name="Price" id="Under €500" value=""><label for="Under €500">Under €500</label></li>
+                            <li><input type="checkbox" name="Price" id="€500 to €1000" value=""><label for="€500 to €1000">€500 to €1000 </label></li>
+                            <li><input type="checkbox" name="Price" id="Above €1000" value=""><label for="Above €1000">Above €1000</label></li>
+                            <li><input type="checkbox" name="Price" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>Display Size</h3>
+                        <ul>
+                            <li><input type="checkbox" name="Display Size" id="Under 15 inches" value=""><label for="Under 15 inches">Under 15 inches</label></li>
+                            <li><input type="checkbox" name="Display Size" id="15 inches & Above" value=""><label for="15 inches & Above">15 inches & Above</label></li>
+                            <li><input type="checkbox" name="Display Size" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>RAM</h3>
+                        <ul>
+                            <li><input type="checkbox" name="RAM" id="8GB" value=""><label for="8GB">8GB</label></li>
+                            <li><input type="checkbox" name="RAM" id="12GB" value=""><label for="12GB">12GB</label></li>
+                            <li><input type="checkbox" name="RAM" id="16GB" value=""><label for="16GB">16GB</label></li>
+                            <li><input type="checkbox" name="RAM" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>CPU</h3>
+                        <ul>
+                            <li><input type="checkbox" name="CPU" id="Intel core i3" value=""><label for="Intel core i3">Intel core i3</label></li>
+                            <li><input type="checkbox" name="CPU" id="Intel core i5" value=""><label for="Intel core i5">Intel core i5</label></li>
+                            <li><input type="checkbox" name="CPU" id="Intel core i7" value=""><label for="Intel core i7">Intel core i7</label></li>
+                            <li><input type="checkbox" name="CPU" id="Intel core i9" value=""><label for="Intel core i9">Intel core i9</label></li>
+                            <li><input type="checkbox" name="CPU" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>Hard drive</h3>
+                        <ul>
+                            <li><input type="checkbox" name="Hard Drive" id="SSD" value=""><label for="SSD">SSD</label></li>
+                            <li><input type="checkbox" name="Hard Drive" id="HDD" value=""><label for="HDD">HDD</label></li>
+                            <li><input type="checkbox" name="Hard Drive" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                    <div class="container_left_son">
+                        <h3>VGA</h3>
+                        <ul>
+                            <li><input type="checkbox" name="VGA (Graphics card)" id="Integrated" value=""><label for="Integrated">Integrated</label></li>
+                            <li><input type="checkbox" name="VGA (Graphics card)" id="All" value=""><label for="All">All</label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- container right-->
+                <div class="container_right">
+                    <div class="container_righttop">
+                        <div class="container_righttop_a">
+                            <h4>Brand</h4>
+                            <select name="brands" id="brands">
+                                <option value="apple">Apple</option>
+                                <option value="asus">Asus</option>
+                                <option value="dell">Dell</option>
+                                <option value="acer">Acer</option>
+                            </select>
+                        </div>
+                        <div class="container_righttop_b">
+                            <h4>Model</h4>
+                            <select name="models" id="models">
+                                <option value="macbook air">Macbook Air</option>
+                                <option value="macbook pro">Macbook Pro</option>
+                            </select>
+                        </div>
+                        <div class="container_righttop_c">
+                            <h4>Sort by</h4>
+                            <select name="sort" id="sort">
+                                <option value="1">Best seller</option>
+                                <option value="2">New arrival</option>
+                                <option value="3">Low to high price</option>
+                                <option value="3">High to low price</option>
+                                <option value="4">Most discounts</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- container rightbottom-->
+                    <div class="container_rightbottom">
+                        <!-- row1 -->
+                        <div class="container_rightbottom_row 1">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                                <div class="product-card-selloff">
+                                    <span class="product-card-selloff-per">50%</span>
+                                    <span class="product-card-selloff-off">off</span>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- row2 -->
+                        <div class="container_rightbottom_row 2">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                                <div class="product-card-selloff">
+                                    <span class="product-card-selloff-per">25%</span>
+                                    <span class="product-card-selloff-off">off</span>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row3 -->
+                        <div class="container_rightbottom_row 3">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row4 -->
+                        <div class="container_rightbottom_row 4">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="img/sp01.png">
+                                </div>
+                                <div class="product-card-name">
+                                    Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD
+                                </div>
+                                <div class="product-card-prices">
+                                    <div class="card-price">€949</div>
+                                    <div class="card-price0">€1898</div>
+                                </div>
+                                <div class="product-card-stock">
+                                    In Stock: 2
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            
+            <!-- footer -->
+            <div class="footer">
+                <p></p>
+                <hr>
+                <div class="footer_collumn">
+                    <div class="footer_collumna">
+                        <div class="footer_collumna_top">
+                            <h3>CONTACT US</h3>
+                        </div>
+                        <ul class="footer_collumna_bottom">
+                            <li>
+                                <a href="" class="">
+                                    <i class="fas fa-phone-volume"></i>
+                                    <span id="phone">&nbsp;0909 123 456 <sub>(Free)</sub></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="">
+                                    <i class="far fa-envelope"></i>
+                                    <span>THT@students.oamk.fi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="">
+                                    <i class="fas fa-home"></i>
+                                    <span class="home address">Yliopistokatu 9, 90570 OULU 90570 Oulu, Finland</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_collumnb">
+                        <div class="footer_collumnb_top">
+                            <h3>CUSTOMER CARE</h3>
+                        </div>
+                        <ul class="footer_collumnb_bottom">
+                            <li><a href="" class="">Warranty Policy</a></li>
+                            <li><a href="" class="">Shopping Guide</a></li>
+                            <li><a href="" class="">Transportation</a></li>
+                            <li><a href="" class="">Return & Refund</a></li>
+                            <li><a href="" class="">About us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_collumnc">
+                        <div class="footer_collumnc_top">
+                            <h3>WHERE TO FIND US</h3>
+                        </div>
+                        <div class="footer_collumnc_bottom">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.2676912167033!2d25.469971516233894!3d65.06181808401735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46802d052d06ce85%3A0xd4acaa362bd64910!2sYliopistokatu%209%2C%2090570%20Oulu%2C%20Ph%E1%BA%A7n%20Lan!5e0!3m2!1svi!2s!4v1607357770203!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer_end">
+                    <span>© 2020 HTH. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

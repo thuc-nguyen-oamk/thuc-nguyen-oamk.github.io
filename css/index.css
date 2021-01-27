@@ -1,0 +1,66 @@
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../img/portal-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1.5px;
+    word-spacing: 4px;
+}
+
+.content {
+    margin: auto;
+    width: 800px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Gorditas', cursive;
+    font-size: x-large;
+}
+
+.title {
+    text-align: center;
+    transform: scaleY(1.5);
+    color: chartreuse;
+    padding: 30px;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    font-size: 21px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: #F4A7B9;
+    color: black;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.circle:hover {
+    color: white;
+    background: #F27A7A;
+}
+
+a {
+    text-decoration: underline;
+    text-align: center;
+    color: white;
+    display: block;
+    width: fit-content;
+    margin-left: 15px;
+}
+a:hover {
+    transform: scale(1.2);
+    font-style: italic;
+}
+
+li {
+    margin: 10px;
+}
