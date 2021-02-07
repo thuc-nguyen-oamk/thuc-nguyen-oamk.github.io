@@ -597,6 +597,10 @@ div.footer_collumnc_top, .footer_collumnc_bottom {
     padding: 2px 7px;
 }
 
+img {
+    width: 70%;
+}
+
 @keyframes fadein {
     from {
         opacity:0;
