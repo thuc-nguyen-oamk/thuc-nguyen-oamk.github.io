@@ -70,6 +70,10 @@ html {
     margin-right: 4px;
 }
 
+.fa-minus, .fa-plus {
+    cursor: pointer;
+}
+
 /* ---- header list menu ---- */
 ul.header_navbar_list {
     display: inline;
@@ -612,4 +616,21 @@ div.footer_collumnc_top, .footer_collumnc_bottom {
 
 .t-name a:hover {
     text-decoration: underline;
+}
+
+.header_navbar_icon_cart {
+    position: relative;
+}
+
+.cart_number {
+    position: absolute;
+    background-color: lightgreen;
+    border-radius: 40px;
+    top: 10px;
+    right: -7px;
+    padding: 2px 7px;
+}
+
+.delete-product {
+    cursor: pointer;
 }

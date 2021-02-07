@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="icon" type="text/css" href="img/favicon.png">
+        
 </head>
 <body>
     <div class="web">
@@ -61,10 +62,10 @@
 
             <!-- icon -->
             <div class="header_navbar_icon">
-                <a href="" class="header_navbar_icon_cart">
-                    <i class="fas fa-cart-plus"></i>
-                    <p>Cart</p>
-                </a>
+                <a href="cart.html" class="header_navbar_icon_cart">
+                            <i class="fas fa-cart-plus"></i>
+                            <p>Cart</p>
+                        </a>
                 <div class="header_navbar_icon_bell">
                     <a href="" class="header_navbar_icon_bell">
                         <i class="fas fa-bell"></i>
@@ -120,93 +121,9 @@
         <h1>Shopping Cart</h1>
         <div class="t-wrapper">
             <div class="t-items">
-                <div class="t-item">
-                    <div class="t-col1">
-                        <img src="img/sp01.png">
-                    </div>
-                    <div class="t-col2">
-                        <div class="t-name"><a href="product-details.html"><b>Asus Strix G531GT HN553T i5 9300H/8GB/512G SSD</b></a></div>
-                        <div class="t-gray"><a href="">Delete</a></div>
-                    </div>
-                    <div class="t-col3">
-                        <div class="t-gray">Price</div>
-                        <div class="t-red">&euro;949</div>
-                        <div class="t-gray t-linethrough">&euro;1898</div>
-                        <div class="t-gray t-smalltext">50% off</div>
-                    </div>
-                    <div class="t-col4">
-                        <div class="t-gray">Quantity</div>
-                        <div class="t-minusplus">
-                            <i class="fas fa-minus"></i>
-                            <span>1</span>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="t-col5">
-                        <div class="t-gray">Subtotal</div>
-                        <div>&euro;949</div>
-                    </div>
-                </div>
-                <div class="t-item">
-                    <div class="t-col1">
-                        <img src="img/sp02.png">
-                    </div>
-                    <div class="t-col2">
-                        <div class="t-name"><a href="product-details.html"><b>Acer Swift 5 SF514 53T 720R/Core i7 8565U/NX.H7HSV.002</b></a></div>
-                        <div class="t-gray"><a href="">Delete</a></div>
-                    </div>
-                    <div class="t-col3">
-                        <div class="t-gray">Price</div>
-                        <div class="t-red">&euro;919</div>
-                        <div class="t-gray t-linethrough"></div>
-                        <div class="t-gray t-smalltext"></div>
-                    </div>
-                    <div class="t-col4">
-                        <div class="t-gray">Quantity</div>
-                        <div class="t-minusplus">
-                            <i class="fas fa-minus"></i>
-                            <span>4</span>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="t-col5">
-                        <div class="t-gray">Subtotal</div>
-                        <div>&euro;3,676</div>
-                    </div>
-                </div>
-                <div class="t-item">
-                    <div class="t-col1">
-                        <img src="img/sp03.png">
-                    </div>
-                    <div class="t-col2">
-                        <div class="t-name"><a href="product-details.html"><b>MSI GF63 9SCSRi5 512GB SSD/Nvidia GTX1650Ti</b></a></div>
-                        <div class="t-gray"><a href="">Delete</a></div>
-                    </div>
-                    <div class="t-col3">
-                        <div class="t-gray">Price</div>
-                        <div class="t-red">&euro;939</div>
-                        <div class="t-gray t-linethrough"></div>
-                        <div class="t-gray t-smalltext"></div>
-                    </div>
-                    <div class="t-col4">
-                        <div class="t-gray">Quantity</div>
-                        <div class="t-minusplus">
-                            <i class="fas fa-minus"></i>
-                            <span>2</span>
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="t-col5">
-                        <div class="t-gray">Subtotal</div>
-                        <div>&euro;1,878</div>
-                    </div>
-                </div>
+
             </div>
             <div class="t-checkout-col">
-            <div class="t-totals">
-                <div class="t-total">Total 7 items</div>
-                <div class="t-grandprice">&euro;6,503</div>
-            </div>
             <div class="t-coupon-apply">
                 <input class="t-coupon" placeholder="Enter Coupon"></input>
                 <button class="t-apply"><a href="">Apply</a></button>
@@ -272,5 +189,10 @@
         </div>
     </div>
     </div>
+
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript">
+        showItemsInCart();
+    </script>
 </body>
 </html>
