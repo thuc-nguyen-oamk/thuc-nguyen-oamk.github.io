@@ -235,52 +235,59 @@ function updateCartIcon(){
     //Create/Update the number floating in front of cart symbol and the LC
     const cart_infos = readLC(LC_CART_INFOS);
 
-    // Remove old number (if any) before append the new one
+    // Remove old number (if any) before appending the new one
     Array.from(document.querySelectorAll('.cart_number')).map( elem => elem.remove() );
 
     if ( isDataEmptyOrImproper(cart_infos) ){
         return
     }
-    let total_item = 0;
 
+    let total_item = 0;
     cart_infos.map( info => total_item += info.quantity );
 
     const cart_quantity_element = document.createElement('div');
     cart_quantity_element.classList.add('cart_number');
     cart_quantity_element.innerText = total_item;
-
+    cart_quantity_element.style = 
+        `position: absolute;
+        background-color: lightgreen;
+        border-radius: 40px;
+        top: 10px;
+        right: -7px;
+        padding: 2px 7px;`;
+    
     document.querySelector('.header_navbar_icon_cart').append(cart_quantity_element);
 }
 
 
 function showProductListing(){
-    //Show 12 products in the listing view and set onlick event handler on each products too
+    //Show all 12 products in the listing view and set onclick event handler on each product
     let row_element = document.createElement('div');    
-    row_element.classList.add('container_rightbottom_row');  // --> Hieu Nguyen created this classname [this f auto handle dup]
+    row_element.classList.add('container_rightbottom_row');
 
     const all_products_element = document.querySelector('.container_rightbottom');
 
-    for (var i = 0; i < PRODUCTS.length; i++) {
+    PRODUCTS.map( (product, product_index) => {
         const product_card_element = document.createElement('div');
         product_card_element.classList.add('product-card');
-        product_card_element.setAttribute('data-product-id', PRODUCTS[i].id);
+        product_card_element.setAttribute('data-product-id', product.id);
         let innerHTMLString = 
                 `<div class="product-card-img">
-                    <a href="product-details.html"><img src="${ PRODUCTS[i].image }"></a>
+                    <a href="product-details.html"><img src="${ product.image }"></a>
                 </div>
                 <div class="product-card-name">
-                    <a href="product-details.html">${ PRODUCTS[i].name }</a>
+                    <a href="product-details.html">${ product.name }</a>
                 </div>
                 <div class="product-card-prices">
-                    <div class="card-price">€${ PRODUCTS[i].price }</div>`
+                    <div class="card-price">€${ product.price }</div>`
 
-        if ( PRODUCTS[i].off > 0 ) {
+        if ( product.off > 0 ) {
             innerHTMLString += 
                 `<div class="card-price0">
-                    €${ parseInt(PRODUCTS[i].price / (1-PRODUCTS[i].off)) }
+                    €${ parseInt(product.price / (1-product.off)) }
                 </div>    
                 <div class="product-card-selloff">
-                    <span class="product-card-selloff-per">${ PRODUCTS[i].off * 100 }%</span>
+                    <span class="product-card-selloff-per">${ product.off * 100 }%</span>
                     <span class="product-card-selloff-off">off</span>
                 </div>`;
         }
@@ -288,19 +295,19 @@ function showProductListing(){
         innerHTMLString +=            
                 `</div>
                 <div class="product-card-stock">
-                    In Stock: ${ PRODUCTS[i].stock }
+                    In Stock: ${ product.stock }
                 </div>`;
 
         product_card_element.innerHTML = innerHTMLString;
 
         row_element.append(product_card_element);
 
-        if ( (i + 1) % 4 === 0 || i === PRODUCTS.length - 1) { //4th 8th 12th... product or last product
+        if ( (product_index + 1) % 4 === 0 || product_index === PRODUCTS.length - 1) { //4th 8th 12th... product or last product
             all_products_element.append(row_element)
             row_element = document.createElement('div');
             row_element.classList.add('container_rightbottom_row');
         }
-    }
+    });
 
     Array.from(document.querySelectorAll('.product-card')).map( card => card.onclick = () => writeLC(LC_CURRENT_PRODUCT_ID, parseInt(card.getAttribute('data-product-id')))); //must use parseInt here
 }
@@ -308,31 +315,34 @@ function showProductListing(){
 
 function showProductDetails(){
     // Show the details for the current product id in LC
-    const current_product_id = readLC(LC_CURRENT_PRODUCT_ID);
-    if ( current_product_id === null || current_product_id === undefined || isNaN(current_product_id) ) {
+    const curr_product_id = readLC(LC_CURRENT_PRODUCT_ID);
+    if ( curr_product_id === null || curr_product_id === undefined || isNaN(curr_product_id) ) { // caution: !0 = true
         return
     }
 
     const container_element = document.createElement('div')
     container_element.classList.add('t-container');
+
+    const curr_product = PRODUCTS.find( product => product.id === curr_product_id );
+
     let innerHTMLString = 
         `<div class="t-bigimage-infobox">
             <div class="t-images">
                 <div class="t-bigimage">
-                    <img src="${ PRODUCTS[current_product_id].image }">
+                    <img src="${ curr_product.image }">
                 </div>
             </div>
             <div class="t-infobox">
                 <div class="t-name">
-                    ${ PRODUCTS[current_product_id].name }
+                    ${ curr_product.name }
                 </div>
                 <div class="t-prices">
-                    <div class="t-price">€${ PRODUCTS[current_product_id].price }</div>`;
+                    <div class="t-price">€${ curr_product.price }</div>`;
 
-    if (PRODUCTS[current_product_id].off > 0){
+    if (curr_product.off > 0){
         innerHTMLString += 
-            `       <div class="t-price0">€${ parseInt(PRODUCTS[current_product_id].price / (1 - PRODUCTS[current_product_id].off)) }</div>
-                    <div class="t-discount">${ PRODUCTS[current_product_id].off*100 }% off</div>`;
+            `       <div class="t-price0">€${ parseInt(curr_product.price / (1 - curr_product.off)) }</div>
+                    <div class="t-discount">${ curr_product.off*100 }% off</div>`;
     }
                     
 
@@ -342,7 +352,7 @@ function showProductDetails(){
                     <div><b>FREE Shipping.</b></div>
                     <div>Price included VAT.</div>
                     <div class="t-green"><b>Free gift packing.</b></div>
-                    <div><i>Only ${ PRODUCTS[current_product_id].stock } items in stock.</i></div>
+                    <div><i>Only ${ curr_product.stock } items in stock.</i></div>
                 </div>
                 <div class="t-btns">
                     <button class="t-addcart">Add to Cart</button>
@@ -354,48 +364,48 @@ function showProductDetails(){
             <h1>TECHNICAL SPECIFICATIONS</h1>
             <table>
                 <tbody><tr>
-                    <td>CPU</td><td>${ PRODUCTS[current_product_id].specs.cpu }</td>
+                    <td>CPU</td><td>${ curr_product.specs.cpu }</td>
                 </tr>
                 <tr>
-                    <td>RAM</td><td>${ PRODUCTS[current_product_id].specs.ram }</td>
+                    <td>RAM</td><td>${ curr_product.specs.ram }</td>
                 </tr>
                 <tr>
-                    <td>Screen</td><td>${ PRODUCTS[current_product_id].specs.screen }</td>
+                    <td>Screen</td><td>${ curr_product.specs.screen }</td>
                 </tr>
                 <tr>
-                    <td>Graphic</td><td>${ PRODUCTS[current_product_id].specs.graphic }</td>
+                    <td>Graphic</td><td>${ curr_product.specs.graphic }</td>
                 </tr>
                 <tr>
-                    <td>Hard Drive</td><td>${ PRODUCTS[current_product_id].specs.harddrive }</td>
+                    <td>Hard Drive</td><td>${ curr_product.specs.harddrive }</td>
                 </tr>
                 <tr>
-                    <td>Operating System</td><td>${ PRODUCTS[current_product_id].specs.os }</td>
+                    <td>Operating System</td><td>${ curr_product.specs.os }</td>
                 </tr>
                 <tr>
-                    <td>Weight</td><td>${ PRODUCTS[current_product_id].specs.weight }</td>
+                    <td>Weight</td><td>${ curr_product.specs.weight }</td>
                 </tr>
                 <tr>
-                    <td>Dimensions</td><td>${ PRODUCTS[current_product_id].specs.dimensions }</td>
+                    <td>Dimensions</td><td>${ curr_product.specs.dimensions }</td>
                 </tr>
                 <tr>
-                    <td>Origin</td><td>${ PRODUCTS[current_product_id].specs.origin }</td>
+                    <td>Origin</td><td>${ curr_product.specs.origin }</td>
                 </tr>
                 <tr>
-                    <td>Year of launch</td><td>${ PRODUCTS[current_product_id].specs.year }</td>
+                    <td>Year of launch</td><td>${ curr_product.specs.year }</td>
                 </tr>
             </tbody></table>
         </div>
         <div class="t-products-in-details">
-            ${ PRODUCTS[current_product_id].html_detail }
+            ${ curr_product.html_detail }
         </div>`;
 
-    container_element.innerHTML = innerHTMLString
+    container_element.innerHTML = innerHTMLString;
     
     const parentNode = document.querySelector('.web');
     const refNode = document.querySelector('.footer');
     parentNode.insertBefore(container_element, refNode);
 
-    document.querySelector('button.t-addcart').onclick = () => addCart( readLC(LC_CURRENT_PRODUCT_ID) );
+    document.querySelector('button.t-addcart').onclick = () => addCart( curr_product_id );
 
     document.querySelector('button.t-buynow').onclick = buyNow;
 }
@@ -409,7 +419,7 @@ function showItemsInCart(){
         document.querySelector('.t-wrapper').remove();
         const empty_container_element = document.createElement('div');
         empty_container_element.classList.add('t-wrapper');
-        empty_container_element.innerHTML = '<h2>Your cart is empty.</h2>'
+        empty_container_element.innerHTML = '<h2>Your cart is empty.</h2>';
         document.querySelector('.t-container').append(empty_container_element);
         return
     }
@@ -419,7 +429,7 @@ function showItemsInCart(){
         const corresponding_product = PRODUCTS.find( product => product.id === info.id );
         const item_element = document.createElement('div');
         item_element.classList.add('t-item');
-        item_element.setAttribute('data-product-id', `${ corresponding_product.id }`)
+        item_element.setAttribute('data-product-id', `${ corresponding_product.id }`);
 
         let innerHTMLString = 
             `<div class="t-col1">
@@ -454,35 +464,35 @@ function showItemsInCart(){
                 <div>&euro;${ (corresponding_product.price * info.quantity).toLocaleString() }</div>
             </div>`;
 
-        item_element.innerHTML = innerHTMLString
+        item_element.innerHTML = innerHTMLString;
 
         document.querySelector('.t-items').append(item_element);
     } )
 
-    // set onclick for above items to be able to go back to details page AND delete a product from cart
-    // also set onclick for - and +
-    // .t-item --> parent of product name, quantity, subtotals... and "Delete"
+    // set onclick event handlers for name(link), -, + and Delete
     Array.from(document.querySelectorAll('.t-item')).map ( t_item => {
         t_item.querySelector('.t-name').onclick = () => writeLC(LC_CURRENT_PRODUCT_ID, parseInt(t_item.getAttribute('data-product-id')));
-        
+         
+        // const matters
+        const corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
+        const corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
 
         t_item.querySelector('.delete-product').onclick = () => {
-            corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
-            corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
-
+            // corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
+            // corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
             cart_infos.splice(corresponding_index, 1); // remove
-            writeLC(LC_CART_INFOS, cart_infos);  // save
-            Array.from(document.querySelector('.t-items').children).map( item => item.remove() );  // remove old ones from DOM
+            writeLC(LC_CART_INFOS, cart_infos);
+            Array.from(document.querySelector('.t-items').children).map( item => item.remove() );  // remove old items from DOM
             document.querySelector('.t-totals').remove();  // remove old grand total too
             showItemsInCart(); // re-create items in cart
             updateCartIcon();
         }
 
         t_item.querySelector('.fa-minus').onclick = () => {
-            corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
-            corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
+            // corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
+            // corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
             cart_infos[corresponding_index].quantity = Math.max(cart_infos[corresponding_index].quantity - 1, 1);  // never goes below 1
-            writeLC(LC_CART_INFOS, cart_infos);  // save
+            writeLC(LC_CART_INFOS, cart_infos);
             Array.from(document.querySelector('.t-items').children).map( item => item.remove() );  // remove old ones from DOM
             document.querySelector('.t-totals').remove();  // remove old grand total too
             showItemsInCart(); // re-create items in cart
@@ -490,17 +500,22 @@ function showItemsInCart(){
         }
 
         t_item.querySelector('.fa-plus').onclick = () => {
-            corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
-            corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
-            cart_infos[corresponding_index].quantity = Math.min(cart_infos[corresponding_index].quantity + 1, PRODUCTS.find( product => product.id === corresponding_id ).stock);  // never goes above stock number
-            writeLC(LC_CART_INFOS, cart_infos);  // save
+            // corresponding_id = parseInt(t_item.getAttribute('data-product-id'));
+            // corresponding_index = cart_infos.findIndex( info => info.id === corresponding_id );
+            const corresponding_stock = PRODUCTS.find( product => product.id === corresponding_id ).stock;
+
+            if (cart_infos[corresponding_index].quantity >= corresponding_stock) {
+                showAlert(`Sorry, we have only ${ corresponding_stock } items of this product in our stock.`);
+                return
+            }
+
+            cart_infos[corresponding_index].quantity = Math.min(cart_infos[corresponding_index].quantity + 1, corresponding_stock);  // never goes above stock number
+            writeLC(LC_CART_INFOS, cart_infos);
             Array.from(document.querySelector('.t-items').children).map( item => item.remove() );  // remove old ones from DOM
             document.querySelector('.t-totals').remove();  // remove old grand total too
             showItemsInCart(); // re-create items in cart
             updateCartIcon();
-            if (cart_infos[corresponding_index].quantity === PRODUCTS.find( product => product.id === corresponding_id ).stock) {
-                showAlert('Reached maximum items of this product in our stock.');
-            }
+
         }
     } );
 
@@ -509,13 +524,12 @@ function showItemsInCart(){
     cart_infos.map( info => total_item += info.quantity );
 
     let grand_total = 0;
-    PRODUCTS.filter( product => {
-        for (i=0; i<cart_infos.length; i++) {
-            if (product.id === cart_infos[i].id){
-                grand_total += product.price * cart_infos[i].quantity;
-                return true
+    PRODUCTS.map( product => {
+        cart_infos.map( info => {
+            if (product.id === info.id) {
+                grand_total += product.price * info.quantity;
             }
-        } 
+        } )
     } );
 
     const totals_element = document.createElement('div');
@@ -526,8 +540,8 @@ function showItemsInCart(){
             <div class="t-grandprice">€${ grand_total.toLocaleString() }</div>
         </div>`;
 
-    parentNode = document.querySelector('.t-checkout-col');
-    refNode = document.querySelector('.t-checkout-col > .t-coupon-apply');
+    const parentNode = document.querySelector('.t-checkout-col');
+    const refNode = document.querySelector('.t-checkout-col > .t-coupon-apply');
     parentNode.insertBefore(totals_element, refNode);
 }
 
