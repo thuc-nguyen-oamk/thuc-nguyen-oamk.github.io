@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>API Documentation</title>
+  </head>
+  <body class="m-2">
+    <div class="mb-1">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#x1" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Register a customer
+        </a>
+    </div>
+    <div class="collapse" id="x1">
+    <div class="card card-body">
+      <b>POST /customers/register</b>
+      <p>Request body:</p>
+      <img src="x11.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x12.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x2" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Login as a customer
+      </a>
+    </div>
+    <div class="collapse" id="x2">
+    <div class="card card-body">
+      <b>POST /customers/login</b>
+      <p>Basic Authorization requried:</p>
+      <img src="x21.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x22.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#xx3" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Login as an admin
+      </a>
+    </div>
+    <div class="collapse" id="xx3">
+    <div class="card card-body">
+      <b>POST /admin/login</b>
+      <p>Basic Authorization requried:</p>
+      <img src="xx31.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="xx32.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+
+    <div class="mb-1">
+      <a class="btn btn-primary text-secondary" data-bs-toggle="collapse" href="#x3" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Register an admin (developer use only)
+      </a>
+    </div>
+    <div class="collapse" id="x3">
+    <div class="card card-body">
+      <b>POST /admin/register</b>
+      <p>Request body</p>
+      <img src="x31.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x32.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x4" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Get all products
+      </a>
+    </div>
+    <div class="collapse" id="x4">
+    <div class="card card-body">
+      <b>GET /products</b>
+      <p>Example response:</p>
+      <pre>
+        [
+          {
+              "product_id": 1,
+              "category_id": 1,
+              "product_name": "Asus pro 2023",
+              "product_description": "blah blah",
+              "product_rating": 4.9,
+              "product_stock_total": 82,
+              "product_brand": "",
+              "display_price": 19.99,
+              "display_price_discounted": 17.99,
+              "display_image": "1648288103368.jpg"
+          },
+          {
+              "product_id": 2,
+              "category_id": 1,
+              "product_name": "Macbook X",
+              "product_description": "apple...",
+              "product_rating": 3.2,
+              "product_stock_total": 8,
+              "product_brand": "",
+              "display_price": 19.99,
+              "display_price_discounted": 17.99,
+              "display_image": "1648385887026.jpg"
+          }
+        ]
+      </pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary " data-bs-toggle="collapse" href="#x5" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Search for products
+      </a>
+    </div>
+    <div class="collapse" id="x5">
+    <div class="card card-body">
+      <b>GET /products</b>
+      <p>Request <span class="text-danger">parameters</span></p>
+      <img src="x51.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x52.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary " data-bs-toggle="collapse" href="#x6" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Get a product by product_id
+      </a>
+    </div>
+    <div class="collapse" id="x6">
+    <div class="card card-body">
+      <b>GET /products/:id</b>
+      <p>Example response:</p>
+<pre>
+  [
+    {
+        "product_id": 48,
+        "category_id": 1,
+        "product_name": "Super cube",
+        "product_description": "asus...",
+        "product_rating": 3.46321,
+        "product_stock_total": 138,
+        "product_brand": "",
+        "details": [
+            {
+                "product_detail_id": 21,
+                "product_color": "Yellow",
+                "product_price": 1000,
+                "product_price_discounted": 999.99,
+                "product_stock": 69,
+                "product_images": "1648396507586.jpg,1648396507589.jpg"
+            },
+            {
+                "product_detail_id": 22,
+                "product_color": "Red",
+                "product_price": 1000,
+                "product_price_discounted": 999.99,
+                "product_stock": 69,
+                "product_images": "1648396538375.jpg,1648396538376.jpg,1648396538377.jpg,1648396538377.jpg"
+            }
+        ]
+    }
+  ]
+</pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x7" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add a product (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x7">
+    <div class="card card-body">
+      <b>POST /products/add</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <img src="x71.png" class="rounded mx-auto d-block" alt="...">
+      <p>Request body:</p>
+      <img src="x73.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x72.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x8" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add a product detail (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x8">
+    <div class="card card-body">
+      <b>POST /products/addDetail</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body <span class="text-danger">(image involved => use multipart/form-data)</span>:</p>
+      <img src="x81.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x82.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x9" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add a product and 1 detail at the same time (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x9">
+    <div class="card card-body">
+      <b>POST /products/addBoth</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body <span class="text-danger">(image involved => use multipart/form-data)</span>:</p>
+      <img src="x91.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x92.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x10" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Edit a product(admin)
+      </a>
+    </div>
+    <div class="collapse" id="x10">
+    <div class="card card-body">
+      <b><span class="text-danger">PUT</span> /products</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body:</p>
+      <img src="x101.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x102.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x999" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Sample
+      </a>
+    </div>
+    <div class="collapse" id="x999">
+    <div class="card card-body">
+      <b>POST /admin/register</b>
+      <p>Request body</p>
+      <img src="x31.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <img src="x32.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
