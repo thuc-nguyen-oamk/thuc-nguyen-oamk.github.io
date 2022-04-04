@@ -168,6 +168,31 @@
     </div>
 
     <div class="mb-1">
+      <a class="btn btn-primary " data-bs-toggle="collapse" href="#x6x6" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Get a product detail by product_detail_id
+      </a>
+    </div>
+    <div class="collapse" id="x6x6">
+    <div class="card card-body">
+      <b>GET /products/details/:id</b>
+      <p>Example response:</p>
+<pre>
+  [
+    {
+        "product_detail_id": 22,
+        "product_color": "Red",
+        "product_price": 1000,
+        "product_price_discounted": 999.99,
+        "product_stock": 69,
+        "product_id": 48,
+        "product_images": "1648396538375.jpg,1648396538376.jpg,1648396538377.jpg,1648396538377.jpg"
+    }
+  ]
+</pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
       <a class="btn btn-primary" data-bs-toggle="collapse" href="#x7" role="button" aria-expanded="false" aria-controls="collapseExample">
         Add a product (admin only)
       </a>
