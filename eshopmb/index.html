@@ -257,6 +257,114 @@
     </div>
     </div>
 
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x11" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Get all categories
+      </a>
+    </div>
+    <div class="collapse" id="x11">
+    <div class="card card-body">
+      <b>GET /categories</b>
+      <p>Example response:</p>
+      <pre>
+        [
+          {
+              "category_id": 1,
+              "category_name": "Headphones",
+              "category_image": "1648539995751.jpg"
+          },
+          {
+              "category_id": 43,
+              "category_name": "Keyboard",
+              "category_image": "1648539954173.jpg"
+          }
+        ]
+      </pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x12" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Get a category by category_id
+      </a>
+    </div>
+    <div class="collapse" id="x12">
+    <div class="card card-body">
+      <b>GET /categories/:id</b>
+      <p>Example response:</p>
+      <pre>
+        [
+          {
+              "category_id": 1,
+              "category_name": "Headphones",
+              "category_image": "1648539995751.jpg"
+          }
+        ]
+      </pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x13" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add a category (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x13">
+    <div class="card card-body">
+      <b>POST /categories</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p><span class="text-danger">The category name must be unique in the system</span></p>
+      <p>Request body:</p>
+      <img src="x131.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <pre>
+        {
+          "message": "Add new category success !"
+        }
+      </pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x14" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Edit a category (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x14">
+    <div class="card card-body">
+      <b><span class="text-danger">PUT</span> /categories</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body:</p>
+      <img src="x141.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <pre>
+        {
+          "message": "Edit category success !"
+        }
+      </pre>
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x15" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Delete a category (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x15">
+    <div class="card card-body">
+      <b><span class="text-danger">DELETE</span> /categories</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body:</p>
+      <img src="x151.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <pre>
+        {
+          "message": "Delete category successfully"
+        }
+      </pre>
+    </div>
+    </div>
+
 
 
 
