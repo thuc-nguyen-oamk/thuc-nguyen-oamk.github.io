@@ -243,7 +243,7 @@
 
     <div class="mb-1">
       <a class="btn btn-primary" data-bs-toggle="collapse" href="#x10" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Edit a product(admin)
+        Edit a product (admin only)
       </a>
     </div>
     <div class="collapse" id="x10">
@@ -254,6 +254,26 @@
       <img src="x101.png" class="rounded mx-auto d-block" alt="...">
       <p>Example response:</p>
       <img src="x102.png" class="rounded mx-auto d-block" alt="...">
+    </div>
+    </div>
+
+    <div class="mb-1">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#x10x11" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Edit a product detail (admin only)
+      </a>
+    </div>
+    <div class="collapse" id="x10x11">
+    <div class="card card-body">
+      <b><span class="text-danger">PUT</span> /products/detail</b>
+      <p>Require <span class="text-danger">admin</span>'s token</p>
+      <p>Request body:</p>
+      <img src="x10x111.png" class="rounded mx-auto d-block" alt="...">
+      <p>Example response:</p>
+      <pre>
+        {
+          "message": "Edit product detail successfully."
+        }
+      </pre>
     </div>
     </div>
 
